@@ -1,9 +1,10 @@
 # CompTIA Security+ Notes
-*Some CompTIA Sec+ Notes by me.*
+*Some CompTIA Sec+ Notes for TIA Education's course instructed by Andrew Ramdayal on Udemy.*
 1. Acronyms
 2. Terms
 3. Prevention
 4. Principles of Social Engineering
+5. Tools
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -16,6 +17,9 @@
 - **VoIP** - Voice Over Internet Protocol
 - **RAT** - Remote Access Trojan
 - **CNC** - Command-and-Control
+- **HDD** - Hard Drive
+- **RAM** - Random Access Memory
+- **USB** - Universal Serial Bus
 
 ## Terms
 - **Non-repudiation**: Specifies a subject cannot deny that an event has taken place. (caught red handed)
@@ -44,6 +48,22 @@
 - **Remote Access Trojan**: Is a trojan but the hacker doesn't have to be on the same network in order to take control.
 - **Bot**: An already infected victim computer, controlled by a hacker.
 - **Command and Control (CNC)**: A server that bots listen to, for incoming commands.
+- **Fileless Virus**: A virus that instead of staying in your HDD, stays in RAM.
+- **Logic Bomb**: A malware that runs after a certain amount of time or after a a specific action has been met.
+- **Spyware**: A type of malware that spies on a victim and can steal their informaiton.
+- **Rootkit**: A type of malware that gives a hacker full access to a victim's machine.
+- **Backdoor**: Like a trojan, but will give the hacker a way back in if booted by victim.
+- **Adversarial Artificial Intelligence**: An attack on AI/ML systems, to manipulate the input into obtain a preferred outcome.
+- **Evasion**: To prevent detection by the server or AI/ML system.
+- **Poisoning**: To change or manipulate the behivor of the server or AI/ML system.
+- **Malicious USB**: A USB that once plugged into a computer, can execute malicious code.
+- **Malicious USB Cable**: Same thing as Malicious USB, but meant to look like a USB cable *(e.g.) An iPhone charging cable*.
+- **Card Cloning**: Hardware that scans the data from a card *(e.g.) A credit card, debit card, hotel room key*. Can maliciously be hidden at ATMs to look like the area to insert a card.
+- **Supply Chain Attack**: An attack (usually cyber attack) on an organization's systems and data by implementing a backdoor into their products (typically software). This allows the attacker to deliver malicious products or software or patches.
+- **Keylogger**: A monitoring system (usually software) that can be used to capture keystrokes. Can also be used maliciously by a hacker.
+- **Hardware Keylogger**: Same thing as a keylogger but through hardware instead of software.
+- **Keystroke**: The press of a key on a keyboard.
+- **Hash**: A string of letters and numbers representing encrypted data.
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -60,3 +80,6 @@
 - **Familiar** - Trick user/employee that you are somebody familiar or using someone familiar to the victim as a way to trick the user.
 - **Trust** - Trick user/employee by getting them to trust you.
 - **Urgency** - Get user/employee to do specific action by making them think you need them to do something immediately.
+
+## Tools
+- Actual Keylogger: https://www.actualkeylogger.com/
