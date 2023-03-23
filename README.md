@@ -1,11 +1,19 @@
 # CompTIA Security+ Notes
 *Some CompTIA Sec+ Notes for TIA Education's course instructed by Andrew Ramdayal on Udemy. There might be some typos, grammar mistakes, or just normal non-tech vocabulary.*
-1. Acronyms
-2. Terms
-3. Prevention
-4. Principles of Social Engineering
-5. Actors and Threats (Who does these attacks)
-6. Tools
+- Acronyms
+- Terms
+- Prevention
+- Threat Actors
+- Exercise Teams
+- Principles of Social Engineering
+- Actors and Threats (Who does these attacks)
+- Cloud-based vs On-premises Vulnerabilities
+- Weak Configurations
+- Tools/Resources
+- Third-party Risks, Improper or Weak Patch, Legacy Systems
+- Impacts of a Hack
+- Vulnerability Scans
+- Network Configuration
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -41,6 +49,16 @@
 - **DOS** - Denial of Service
 - **DDOS** - Distributed Denial of Service
 - **RCE** - Remote Code Execution
+- **AIS** - Automated Indicator Sharing
+- **CVE** - Common Vulnerability Exposures
+- **TTP** - Tactics, Techniques, and Procedures
+- **CVSS** - Common Vulnerability Scoring System
+- **SOC** - Security Operation Center
+- **SIEM** - Security Information Event Management
+- **SOAR** - Secuirty Orchestration Automation Response
+- **CDN** - Content Delivery Network
+- **OSINT** - Open Source Intelleigence
+- **SPIM** - SPam over Instant Messenger
 
 ## Terms
 - **Non-repudiation**: Specifies a subject cannot deny that an event has taken place. (caught red handed)
@@ -105,6 +123,19 @@
 - **Rogue Access Point**: An access point that is set up by someone who is not in charge of the network. Although it doesn't have be malicious, it can still be misconfigured and will cause a breach of security within the network. *(e.g.) A worker who only has wired connection at their office and wants wifi. So they set up a wireless access point without telling their boss or the IT Department.*
 - **Bluesnarfing**: Unauthorized access of information through bluetooth connection. *(e.g.) Calander, Contacts, Emails, Pictures, Videos, Text Messages*
 - **Bluejacking**: Sending unsolicited messages through via bluetooth by sending a vCard.
+- **Pentest**: Short for Penetration Testing.
+- **Indicators of Compromise**: Parts of forensic data. Log entries or files that may identify malicious activity on a system or network.
+- **Predictive Analysis**: Statistical techniques from data mining and machine learning, that analyzes information to make prediction about threats.
+- **Automated Indicator Sharing (AIS)**: Structured Threat Information eXpression(STIX)/Trusted Automated eXchange of Indcator Information(TAXII)
+- **Threat Maps**: A map of the world that shows cyber attacks in real time.
+- **File/Code Repositories**: Where source code for software programs are archived and in an ordered way. *(e.g.) GitHub*
+- **Common Vulnerability Scoring System (CVSS)**: A score on how critical a vulnerability is.
+- **Rules of Engagement**: Rules to follow for pentesting. *(e.g.) You are allowed to scan your own machine, but not others'. Not allowed to DDoS.*
+- **Lateral Movement**: Move sideways between devices and apps through a network in search of data or assets.
+- **Persistence**: Gaining access into a system and maintaining it for a long period of time.
+- **Cleanup**: Clearing log files to hide your activities.
+- **Bug bounty**: Program offered by organizations to find bugs, exploits, and vulnerabilities.
+- **Pivoting**: Using one machine to break into another machine.
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -122,7 +153,6 @@
 - **Intimidation** - Trick user/employee that you are somebody that they should listen to or there might be negative consequences.
 - **Consensus** - Trick user/employee that everyone is doing a specific event and that they should be doing it too.
 - **Familiar** - Trick user/employee that you are somebody familiar or using someone familiar to the victim as a way to trick the user.
-- **Trust** - Trick user/employee by getting them to trust you.
 - **Urgency** - Get user/employee to do specific action by making them think you need them to do something immediately.
 
 ## Threact Actors
@@ -130,6 +160,99 @@
 - **Insider Threat**: Someone within a system, company, or network that can dismantle it from within. They do not need to worry about breaking in or finding a way in because they already are. Highly dangerous.
 - **State Actor**: A hacker/spy working for another country in order to cause disruptions.
 - **Hacktivists**: A hacker who hacks for a political cause. They hack because they are not fond of a political party or perhaps a policy that is being pushed or was put in place.
+- **Shadow IT**: An IT Department not ran by the IT Department. Can be ran by people who don't have the proper skills to be doing IT.
+- **Competitors**: A business in an industry trying to gather information or dismantle a similar business within the same industry.
+- **Organized Crime**: A group of individuals who are highly skilled, either disrupting or gathering info on businesses in order for profit.
 
-## Tools
+### Types of Hackers Based On Motivation/Philosophy
+- **White Hat**: Someone who hacks legally within the confines of the law. They are typically hired by companies to break into business systems/networks, all while following ethical standards. White Hat Hackers are also known as "Ethical Hacker".
+- **Black Hat**: A hacker who's sole motivation is either to destroy systems or make profit by any means necessary. They do not care about ethics or the law. They do not care who gets involved or who their attacks affect. They know that what they are doing is highly illegal. Since they have no ethics to follow, they are usually ahead of White Hats since the world is their playground.
+- **Grey Hat**: A hacker who breaks into systems or networks without permisssion and may violate ethical standards or principles. Grey Hats don't care about profit. Usually hacks out of curiousity or for the common good.
+
+## Exercise Types
+- **Red Team**: Ethical hacking on your network. Penetration Testing.
+- **Blue Team**: Defending your network from hackers. Configuring the network, installing latest updates, securing the firewall.
+- **White Team**: Refereeing the engagement between the Red and Blue Teams.
+- **Purple Team**: Do both Red and Blue. Testing and securing of a company.
+
+## Cloud-based vs On-premises Vulnerabilities
+### Cloud
+- Loss of Physical Control of Data
+- Internet Accessible
+- Multi Tenants
+- Data Deletion is incomplete
+- Vendor Lock-in
+
+### On-Premises
+- Responsible to for physical security
+- Generally more expensive
+- Organization is responsible for all logical security controls
+
+## Weak Configurations
+- Open permissions
+- Unsecure root accounts
+- Errors
+- Weak encryption
+- Unsecure protocols
+- Default settings
+- open ports and services
+
+## Tools/Resources
 - Actual Keylogger: https://www.actualkeylogger.com/
+- Open Source Intelligence Framework: https://osintframework.com/
+- National Vulnerability Database: https://nvd.nist.gov/
+- Public/Private Information Sharing Centers: https://cisa.gov/information-sharing-vital-resource/ https://it-isac.org/
+- Exchange of Cyber Threat Indicators: https://us-cert.cisa.org/ais/
+- Vulnerability Feeds: https://cve.mitre.org/cve/data_feeds.html/
+- Threat Feeds: https://talosintelligence.com/vulnerability_info/
+- Adversary Tactics, Techniques, and Procedures: https://attack.mitre.org/
+- Vulnerability Summary of the Week: https://us-cert.cisa.gov/ncas/bulletins/
+- Common Vulnerability Scoring System: https://first.org/cvss/
+- Network Diagaram: https://lucidchart.com/pages/templates/network-diagram/
+
+## Third-party Risks, Improper or Weak Patches, & Legacy Systems
+### Third-party Risks
+- Vendor Management
+- System Integration
+- Lack of vendor support
+- Supply chain
+- Outsourced code development
+- Data storage
+
+### Improper or Weak Patch Management
+- Firmware
+- Operating System
+- Applications
+
+### Legacy Systems
+Firmware, Operating System, or Applications that is SO OLD that there is most likely a vulnerability found for it already.
+
+## Impacts of a Hack
+- Data Loss
+- Data breaches
+- Data exfiltration (Data Export or theft)
+- Identity Theft
+- Financial
+- Reputation
+- Availability loss
+
+## Vulnerability Scans
+- False Positives
+- False Negatives
+- Log reviews
+- Credentialed vs non-Credentialed
+- Intrusive vs non-Intrusive
+- Application
+- Web application
+- Network
+- CVE/Common Vulnerability Scoring System (CVSS)
+- Configuration Review
+
+## Network Configuration Management
+- Network Diagrams *Check the Tools/Resources Section*
+- Baseline Configurations
+-- Minimum configurations for systems
+- Standard Naming Conventions
+-- Company specific naming of systems and devices *(e.g.) Department_Comp# - Sales_01, Business_33*
+- Internet Protocol (IP) Schema
+-- Internal IP Addressing *(e.g.) { Department: Sales, IP-Schema: 192.168.10.X, Routers: .1-.10, Servers: .11-.41 }, { Department: Accounting, IP: 192.168.20.X, ... }* 
