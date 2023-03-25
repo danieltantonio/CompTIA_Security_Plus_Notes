@@ -18,6 +18,7 @@
 - Other Security Considerations
 - Site Resiliency
 - Data and Disruption
+- The Goals of Cryptography
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -154,6 +155,15 @@
 - **HoneyNets**: A network of HoneyPots.
 - **Telemetry**: Collection of user and usage data, usually over the internet.
 - **DNS Sinkhole**: Redirecting a user to a safe website.
+- **Cryptography**: A way to secure communication or data from an unintended recipient.
+- **Cipher**: A method of cryptography. Comes in two parts - An algorithm (instructions on encryption), and a secret key (how the data will be encrypted/decrypted). *(e.g.) The Cesar Cipher*
+- **Encryption**: The conversion of data into a code to prevent unauthorized access.
+- **Decryption**: The conversion of data back to it's original form.
+- **Symmetric Cipher**: The same key that is used to encrypt data, is also used to decrypt the hash.
+- **Asymmetric Cipher**: A public and private key pair. A public key is able to encrypt the data, but only the private key is able to decrypt it.
+- **Hybrid Cryptography**: Using both Symmetric and Asymmetric algorithms to encrypt data.
+- **Hashing**: A one way cryptographic function on data that cannot be cracked, nor decrypted using a key. Only used as a way to represent the data, data modification, and to prove integrity. Does not provide confidentiality.
+- **Hash**: The output of the hashing algorithm.
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -308,3 +318,55 @@ Firmware, Operating System, or Applications that is SO OLD that there is most li
 - Honeynet
 - Fake telemetry
 - DNS sinkhole
+
+## The Goals of Cryptography
+- Confidentiality: Able to hide the information.
+- Integrety: Able to know if the information has been tampered with.
+- Authentication: Able to tell if the information is from the correct source.
+- Nonrepudation: Cannot deny if an event has taken place and will be able to prove that an event has taken place.
+
+### Block vs Stream Ciphers
+- **Block Cipher**: A Block Cipher takes data and encrypts it block by block. Each block's size is depended by the key size, and encrypted using the cipher's specific algorithm.
+- **Stream Cipher**: A Stream Cipher encrypts data a bit at a time. Less demanding.
+
+### Symmetric vs Asymmetric Ciphers
+#### Symmetric Ciphers
+|           Algorithm            | Block Size |    Key Size    | Rounds |
+| ------------------------------ | ---------- | -------------- | ------ |
+| Data Encryption Standard (DES) |     64     |        56      |   16   |
+|      Triple-DES (3 DES)        |     64     |   112 or 168   |   48   |
+| Internation Data Encryption Algorithm (IDEA) | 64 |    128   |   8    |
+| Blowfish | Variable | 1 - 488 | 16                                    |
+| Skipjack | 64 | 80 |                                                  |
+| Rivest Cipher 2 (RC2) | 64 | 128 |                                    |
+| Rivest Cipher 4 (RC4) | Streaming | 128                               |
+| Rivest Cipher 5 (RC5) - RSA | 32, 64, 128 | 0 - 2040 | 255            |
+| Advanced Encryption Standard (AES) | 128 | 128, 192, 256 | 10 - 14    |
+| Two Fish | 128 | 1 - 256 | 16                                         | 
+
+
+#### Symmetric Ciphers Pros/Cons
+**Pros**
+- Doesn't require a lot of CPU power
+- Quick
+
+**Cons**
+- Requires the same key to encrypt and decrypt the algorithm
+- Transporting the key
+- Gets harder to manage as more people need access to the data.
+
+#### Asymettric Ciphers
+- Rivest-Shamir-Adleman (RSA) (Most Famous)
+- Eliptic Curve Cryptosystem (ECC)
+- Diffie-Hellman
+- El-Gamal
+- Digital Signature Algorithm (DSA)
+- Merkle-Hellman Knapsack
+
+#### Asymmetric Ciphers Pros/Cons
+**Pros**
+- Only public keys can encrypt data. Doesn't matter who gets their hands on the public key.
+- Only private keys can decrypt data. No need to transport private key anywhere.
+
+**Cons**
+- Slow
