@@ -14,6 +14,10 @@
 - Impacts of a Hack
 - Vulnerability Scans
 - Network Configuration
+- Data Protection
+- Other Security Considerations
+- Site Resiliency
+- Data and Disruption
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -59,6 +63,12 @@
 - **CDN** - Content Delivery Network
 - **OSINT** - Open Source Intelleigence
 - **SPIM** - SPam over Instant Messenger
+- **DLP** - Data Loss Prevention
+- **HSM** - Hardware Security Module
+- **CASB** - Cloud Access Security Broker
+- **TLS** - Transport Layer Security
+- **PaaS** - Platform as a Service
+- **IaaS** - Infostructure as a Service
 
 ## Terms
 - **Non-repudiation**: Specifies a subject cannot deny that an event has taken place. (caught red handed)
@@ -136,6 +146,14 @@
 - **Cleanup**: Clearing log files to hide your activities.
 - **Bug bounty**: Program offered by organizations to find bugs, exploits, and vulnerabilities.
 - **Pivoting**: Using one machine to break into another machine.
+- **Data Sovereignty**: Data are subjected to the laws and governance structures within the nation it is collected.
+- **Hardware Security Module (HSM)**: Devices that creates cryptographic keys, and manages cryptographic keys. This way your server won't need to use more resources for security.
+- **Cloud Access Security Broker (CASB)**: Software that sits between an organization and their cloud server. Ensures that the data security policies are met.
+- **HoneyPot**: A vulnerable server with fake data to waste the attacker's time. Once the attacker is in, they think the data on the machine is real enough to steal.
+- **HoneyFiles**: Fake data on a server.
+- **HoneyNets**: A network of HoneyPots.
+- **Telemetry**: Collection of user and usage data, usually over the internet.
+- **DNS Sinkhole**: Redirecting a user to a safe website.
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -255,4 +273,38 @@ Firmware, Operating System, or Applications that is SO OLD that there is most li
 - Standard Naming Conventions
 -- Company specific naming of systems and devices *(e.g.) Department_Comp# - Sales_01, Business_33*
 - Internet Protocol (IP) Schema
--- Internal IP Addressing *(e.g.) { Department: Sales, IP-Schema: 192.168.10.X, Routers: .1-.10, Servers: .11-.41 }, { Department: Accounting, IP: 192.168.20.X, ... }* 
+-- Internal IP Addressing *(e.g.) { Department: Sales, IP-Schema: 192.168.10.X, Routers: .1-.10, Servers: .11-.41 }, { Department: Accounting, IP: 192.168.20.X, ... }*
+
+## Data Protection
+- Data Loss Prevention (DLP)
+- Masking
+- Tokenization
+- Encryption
+
+### Three states of Data
+- At rest
+- In transit/motion
+- In processing (In use)
+
+- Rights management
+
+## Other Security Consideration
+- Hardware Security Module (HSM)
+- Geographical considerations
+- Cloud access security broker (CASB)
+- Response and Recovery Controls
+- Secure Socket Layer (SSL)/Transport Layer Security (TLS) inspection
+- Hashing
+- API Considerations 
+
+## Site Resiliency
+- **Cold Site**: An alternative warehouse that an organization can get. Almost an empty room with no equipment or services. There is heat ventalation and A/C. Can take weeks to set up. The cheapest option.
+- **Warm Site**: A warehouse that comes with some equipment. Can take days up and running. More expensive than a Cold Site.
+- **Hot Site**: Comes with all the equipment. All you need to do is load your data up to the machines and you're good to go. Can take a few hours up to a day to set up. The most expensive
+
+## Data and Disruption
+- Honeypots
+- Honeyfiles
+- Honeynet
+- Fake telemetry
+- DNS sinkhole
