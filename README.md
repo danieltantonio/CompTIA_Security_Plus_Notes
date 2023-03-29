@@ -19,6 +19,9 @@
 - Site Resiliency
 - Data and Disruption
 - The Goals of Cryptography
+- The Limitations of Encryption
+- Development Environments
+- Implementing Cybersecurity Resilience
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -70,6 +73,15 @@
 - **TLS** - Transport Layer Security
 - **PaaS** - Platform as a Service
 - **IaaS** - Infostructure as a Service
+- **OWASP** - Open Web Application Security Project
+- **SDK** - Source Development Kit
+- **NAS** - Network-Attached Storage
+- **NIC** - Network Interface Cards
+- **UPS** - Uninteruptible Power Supply
+- **PDU** - Power Distribution Unit
+- **VM** - Virtual Machine
+- **RAID** - Redundant Array of Independant Disks
+- **FPGA** - Field Programmable Gate Array
 
 ## Terms
 - **Non-repudiation**: Specifies a subject cannot deny that an event has taken place. (caught red handed)
@@ -164,6 +176,17 @@
 - **Hybrid Cryptography**: Using both Symmetric and Asymmetric algorithms to encrypt data.
 - **Hashing**: A one way cryptographic function on data that cannot be cracked, nor decrypted using a key. Only used as a way to represent the data, data modification, and to prove integrity. Does not provide confidentiality.
 - **Hash**: The output of the hashing algorithm.
+- **Lightweight Cryptography**: A crytpographic method that requires less computational complexity for a more restricted device. *(e.g.) Security for IoT devices*
+- **Entropy**: A lack of order or predictability; descent into disorder. Randomness.
+- **Provisioning**: Data available to the users.
+- **Deprovisioning**: Data unavailable.
+- **Normalization**: Removing or managing uncessary or redundant information from a database in order to make the database server faster, more secure, and less confusing.
+- **Dead Code**: Code that isn't being used within an application software.
+- **Biometric**: An authentication method that uses parts of your body. *(e.g.) finger prints, retina, iris, voice, etc.*
+- **Redundancy**: Portion of the total information that can be eliminated without loss of essential information. Provision of duplicate, or backup equipment links that immediately take over the function of equipment or transmission lines that fail.
+- **Zigbee**: Short distance communication.
+- **Z-Wave**: Another short distance communication.
+- **Federation**: An authentication method that allows credntials to be shared across multiple web applications. *(e.g.) To use either your Facebook, Google, or Github account to sign into your Discord account*.
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -279,11 +302,11 @@ Firmware, Operating System, or Applications that is SO OLD that there is most li
 ## Network Configuration Management
 - Network Diagrams *Check the Tools/Resources Section*
 - Baseline Configurations
--- Minimum configurations for systems
+    - Minimum configurations for systems
 - Standard Naming Conventions
--- Company specific naming of systems and devices *(e.g.) Department_Comp# - Sales_01, Business_33*
+    - Company specific naming of systems and devices *(e.g.) Department_Comp# - Sales_01, Business_33*
 - Internet Protocol (IP) Schema
--- Internal IP Addressing *(e.g.) { Department: Sales, IP-Schema: 192.168.10.X, Routers: .1-.10, Servers: .11-.41 }, { Department: Accounting, IP: 192.168.20.X, ... }*
+    - Internal IP Addressing *(e.g.) { Department: Sales, IP-Schema: 192.168.10.X, Routers: .1-.10, Servers: .11-.41 }, { Department: Accounting, IP: 192.168.20.X, ... }*
 
 ## Data Protection
 - Data Loss Prevention (DLP)
@@ -370,3 +393,129 @@ Firmware, Operating System, or Applications that is SO OLD that there is most li
 
 **Cons**
 - Slow
+
+## Limitations of Encryption
+- **Entropy**: Nothing is 100% random in cryptography.
+- **Speed**: Might be too slow to encrypt data, system, or connection.
+- **Size**: Can end up taking up more storage after encrypting.
+- **Time**: If the speed is too slow, can take up too much time.
+- **Longevity**: The security of the data over time. Even if a hacker were to get their hands on the encrypted data.
+- **Predictability**: Don't want to have the encrypted data to be predictible.
+- **Reuse**: Need to be able to reuse the same standards of encryption of data.
+- **Computational Overheads**: How well the hardware is able to sustain constant encrypting and decrypting.
+- **Resource vs Security Constraints**: When the resources of the server don't match up to the security standards required.
+
+## Development Environments
+### Environments
+- **Development**: Where they will be writing the code for the application/software.
+- **Test**: Test the code, see how it performs.
+- **Staging**: Mimics the production server to see how it interacts with all the other systems.
+- **Production**: The live environment, where users will use the application/software.
+- **Quality Assurance (QA)**: Seeing if the application/software meets up to the needs of their customers and to see if everything is going correctly.
+
+### Secure Coding Techniques
+- Provisioning and Deprovisioning
+- Integrity measurement
+- Secure Coding Techniques
+    - Normalization
+    - Stored Procedures
+    - Obfucscation/camouflage
+    - Code reuse/dead code
+    - Server-side vs client-side
+    - Execution and Validation
+    - Memory Management
+    - Use of Third-Parties and Source Development Kits (SDKs)
+    - Data Exposure
+- Open Web Application Security Project (OWASP)
+
+## Authentication
+### Three Factors of Authentication
+- Something you know
+- Something you have
+- Something you are
+
+### Authentication Methods
+- Directory Services
+- Federation
+- Attestation
+- Smart card authentication
+- Technologies:
+    - Time based passwords (TOTP)
+    - HMAC-based one-time password (HOTP)
+    - SMS Messages
+    - Token key
+    - Static codes
+    - Authentication applications
+    - Push notifications
+    - Phone call
+
+### Biometrics
+- Fingerprints
+- Retina: Looking at the blood vessels in the back of your eyes
+- Iris: Looking at the color pattern in your eyes
+- Facial
+- Voice: Uses voice to authenticate. Highly vulnerable.
+- Veins
+- Gait Analysis
+- Efficacy rates
+    - False acceptance
+    - False rejection
+    - Crossover error rate
+
+## Implementing Cybersecurity Resilience
+
+### Redundancy
+- Geographical Dispersal
+- Network
+    - Load balancers
+    - Network Interface Card (NIC) teaming
+- Power
+    - Unintterruptible Power Supply (UPS)
+    - Generator
+    - Dual supply
+    - Managed Power Distribution Units (PDUs) 
+
+### Replication and Storage
+- Network-attached Storage (NAS)
+- Storage Area Network (SAN)
+- VM
+
+### Backup Types
+- On Premises vs Cloud
+- Backup types
+    - **Full**: Generally done once a week, takes up a lot of space. Once done, clears the archive bit.
+    - **Incremental**: Backs up everything since the last back up. Once done, clears the archive bit. *(e.g.) Wed (clears), Thurs (clears), Fri (clears).*
+    - **Snapshot**: Usually used for VMs. A specific point in time of the VM being used.
+    - **Differential**: Backs up everything since the last back up. DOES NOT clear the archive bit. *(e.g.) Wed, Weds & Thurs, Wed & Thurs & Fri*
+    - Tape
+    - Disk
+    - Copy
+    - Cloud
+    - **Image**: Usually for Windows systems. Restores the operating system to a certain point in time. 
+    - Online vs Offline
+    - Offsite storage
+    - Distance consideration
+
+### Non-persistence, High Availability, Diversity
+- Non-persistence
+    - Revert to known state
+    - Last known-good configuration
+    - Live boot media
+- High Availability
+    - Scalability
+- Restoration Order
+- Diversity
+    - Technologies
+    - Vendors
+    - Crypto
+    - Controls
+
+### RAIDs
+| Raid Level | Min # Drives | Max # Drives | Max # Drive Failures | Benefits |
+| ---------- | ------------ | ------------ | -------------------- | -------- |
+| Raid 0     | 2            | Unlimited    | 0 - None             | Performance & larger storage |
+| Raid 1     | 2            | 2            | 1                    | Data protection w/ zero recovery time |
+| Raid 5     | 3            | Unlimited    | 1                    | Data protection & larger storage |
+| Raid 6     | 4            | Unlimited    | 2                    | Data protection & larger storage |
+| Raid 1 + 0 | 4            | Unlimited    | 2 or more            | Performance, data protection, larger storage with fast recovery |
+| Raid 0 + 1 | 4            | Unlimited    | 2 or more            | Peromance, data protection, larger storage with fast recovery |
