@@ -22,6 +22,7 @@
 - The Limitations of Encryption
 - Development Environments
 - Implementing Cybersecurity Resilience
+- Implementing Secure Protocols
 
 ## Acronyms
 - **CIA** - Confidentiality Integrity Availability
@@ -82,6 +83,12 @@
 - **VM** - Virtual Machine
 - **RAID** - Redundant Array of Independant Disks
 - **FPGA** - Field Programmable Gate Array
+- **DNSSEC** - Domain Name System Security Extension
+- **S/MIME** - Secure Multipurpose Internet Mail Extension
+- **SRTP** - Secure Real-Time Protocol
+- **SNMP** - Secure Network Management Protocol
+- **L2TP** - Layer 2 Tunneling Protocol
+- **LDAP** - Lightweight Directory Access Protocol
 
 ## Terms
 - **Non-repudiation**: Specifies a subject cannot deny that an event has taken place. (caught red handed)
@@ -187,6 +194,7 @@
 - **Zigbee**: Short distance communication.
 - **Z-Wave**: Another short distance communication.
 - **Federation**: An authentication method that allows credntials to be shared across multiple web applications. *(e.g.) To use either your Facebook, Google, or Github account to sign into your Discord account*.
+- **Layer 2 Tunneling Protocol (L2TP)**: VPN technology to connect two networks together. 
 
 ## Prevention
 - **Phishing** - Employee/User Training
@@ -517,5 +525,34 @@ Firmware, Operating System, or Applications that is SO OLD that there is most li
 | Raid 1     | 2            | 2            | 1                    | Data protection w/ zero recovery time |
 | Raid 5     | 3            | Unlimited    | 1                    | Data protection & larger storage |
 | Raid 6     | 4            | Unlimited    | 2                    | Data protection & larger storage |
-| Raid 1 + 0 | 4            | Unlimited    | 2 or more            | Performance, data protection, larger storage with fast recovery |
+| Raid 1 + 0 | 4            | Unlimited    | 2 or more            |  Performance, data protection, larger storage with fast recovery |
 | Raid 0 + 1 | 4            | Unlimited    | 2 or more            | Peromance, data protection, larger storage with fast recovery |
+
+## Implement Secure Protocols
+- **DNSSEC**: Domain Name System Security Extension helps prevent DNS Poisoning attacks
+- **S/MIME & PMP**: Secure Multipurpose Internet Mail Extension (S/MIME) and Pretty Good Privacy (PGP), are a good way of preventing from an attacker to sniff for emails being sent.
+- **Secure Real-Time Protocol (SRTP)**: A good way to secure VoIP.
+- **File Transfer Protocol Secure**: A good way to secure an FTP server, using TLS.
+- **SSH File Transfer Protocol**: Using SSH encryption to secure an FTP server.
+- **Secure Network Management Protocol v3 (SNMP3)**: A protocol to gather information on device statuses, within your network. Version 3 is the encrypted version of SNMP.
+- **Secure Post Office Protocol (POP) / Internet Message Access Protocol (IMAP)**: A protocol for securing email traffic.
+- **Secure Shell (SSH)**: A replacement for the Telnet protocol, due to Telnet's lack of encryption. Connect to a computer hosting an SSH server via command line.
+- **Lightweight Directory Access Protocol (LDAP)**: Used to encrypt traffic for Active Directory servers.
+- **Virtual Private Network (VPN)**: Used to tunnel traffic between two networks.
+- **Internet Protocol Security (IPSEC)**:
+    - Two Encryption Modes:
+        - Transport: Encrypts only the data portion (payload) of each packet, but leaves the head untouched.
+        - Tunnel: More secure. Tunnel mode encrypts both the header and the payload.
+    - IPSec uses the following protocols to perform vaious functions:
+        - Authentication Headers (AH) provides integrity and authentication. Although not encrypted, could be used for public data across the network.
+        - Encapsulating Security Payloads (ESP) provide confidentiality and authentication.
+
+### Use Cases
+- **Voice and Video**: S/RTP
+- **Time Syncrhonization**: SNTP
+- **Email**: S/MIME & PMP, POP & IMAP over PGP.
+- **Web**: HTTPS
+- **File Transfer**: SFTP, FTPS
+- **Directory Service**: LDAP
+- **Domain Name Resolution**: DNSSEC
+- **Routing and Switching**: SNMPv3
